@@ -6,12 +6,8 @@
 # Wed Apr 25 20:50:00 EDT 2007
 #
 
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
+require 'helper'
 
-    
 class FactsTest < Test::Unit::TestCase
   def setup
     Rools::Base.logger = Logger.new(STDOUT)

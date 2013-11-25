@@ -6,10 +6,7 @@
 # Wed Apr 25 20:50:00 EDT 2007
 #
 
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
+require 'helper'
 
 class Person
   attr_accessor :name, :gender, :maritalStatus, :age
@@ -46,7 +43,7 @@ class CSVTest < Test::Unit::TestCase
   end
   
   def test_greetings
-    rules  = Rools::RuleSet.new 'test/data/greetings.csv'
+    rules  = Rools::RuleSet.new 'test/fixtures/greetings.csv'
 	status = rules.assert Hour.new(1)
 	assert status == :pass
 	assert $greeting == "Good Morning"
@@ -73,7 +70,7 @@ class CSVTest < Test::Unit::TestCase
     joe   = Person.new("Joe", "Male", "Single", 43)
     john  = Person.new("Little John", "Male", "Single", 9)
     
-    rules  = Rools::RuleSet.new 'test/data/salutations.csv'
+    rules  = Rools::RuleSet.new 'test/fixtures/salutations.csv'
 	status = rules.assert sally
 	assert status == :pass
 	assert $salutation == "Mrs."

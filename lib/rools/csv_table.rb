@@ -21,7 +21,7 @@ module Rools
     def initialize( fileName )
       csv_data = IO.read( fileName)
       arrs = []
-      CSV::Reader.parse(csv_data, ",", "\r") do |row|
+      CSV.foreach(fileName) do |row|
         #puts "row:#{row.inspect}"
         arrs << row
       end

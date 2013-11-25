@@ -6,10 +6,7 @@
 # Tue May 22 11:03:01 EDT 2007
 #
 
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
+require 'helper'
 
     
 class RuleAssertTest < Test::Unit::TestCase

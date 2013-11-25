@@ -6,10 +6,7 @@
 # Wed Apr 25 20:50:00 EDT 2007
 #
 
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
+require 'helper'
 
  class NewEmployee
     attr_accessor :name, :occupation
@@ -43,7 +40,7 @@ class RulesTest < Test::Unit::TestCase
   end
   
   def test_file
-	rules  = Rools::RuleSet.new 'test/data/hello.rb'
+	rules  = Rools::RuleSet.new 'test/fixtures/hello.rb'
 	status = rules.assert 'Heya'
 	assert status == :pass
 	assert rules.num_executed == 1

@@ -6,10 +6,7 @@
 # Wed Apr 25 20:50:00 EDT 2007
 #
 
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
+require 'helper'
 
     
 class XMLTest < Test::Unit::TestCase
@@ -18,7 +15,7 @@ class XMLTest < Test::Unit::TestCase
   end
   
   def test_xml_1
-    rules  = Rools::RuleSet.new 'test/data/un.xml'
+    rules  = Rools::RuleSet.new 'test/fixtures/un.xml'
 	status = rules.assert 'France'
 	assert status == :pass
 	assert rules.num_executed == 1
@@ -26,7 +23,7 @@ class XMLTest < Test::Unit::TestCase
   end
   
   def test_xml_2
-    rules  = Rools::RuleSet.new 'test/data/hello.xml'
+    rules  = Rools::RuleSet.new 'test/fixtures/hello.xml'
 	status = rules.assert 'Heya'
 	assert status == :pass
 	assert rules.num_executed == 1

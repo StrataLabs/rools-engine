@@ -5,10 +5,7 @@
 # Wed Apr 25 20:50:00 EDT 2007
 #
 
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
+require 'helper'
 require 'date'
 
 class User
@@ -25,7 +22,7 @@ class User
   def admin?
     return @admin
   end
-  
+  require 'helper'
   def customer?
     return @customer
   end

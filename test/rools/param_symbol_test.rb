@@ -6,11 +6,7 @@
 # Tue May 22 22:14:08 EDT 2007
 #
 
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
-
+require 'helper'
    
     class Employee
       attr_accessor :name

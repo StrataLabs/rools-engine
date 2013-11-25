@@ -6,10 +6,7 @@
 # Wed Apr 25 20:50:00 EDT 2007
 #
 
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
+require 'helper'
 
 class Customer
   
@@ -61,7 +58,7 @@ class CSVLoanTest < Test::Unit::TestCase
   end
   
   def test_rules_101
-    rules  = Rools::RuleSet.new 'test/data/rules101.csv'
+    rules  = Rools::RuleSet.new 'test/fixtures/rules101.csv'
 	status = rules.assert @customer1, @loan1
 	#puts "$incomeValidationResult = #{$incomeValidationResult}"
 	assert status == :pass
@@ -69,7 +66,7 @@ class CSVLoanTest < Test::Unit::TestCase
   end
   
   def test_rules_212
-    rules  = Rools::RuleSet.new 'test/data/rules212.csv'
+    rules  = Rools::RuleSet.new 'test/fixtures/rules212.csv'
 	status = rules.assert @customer1, @loan1
 	#puts "$debtResearchResult = #{$debtResearchResult}"
 	assert status == :pass
@@ -77,7 +74,7 @@ class CSVLoanTest < Test::Unit::TestCase
   end
   
   def test_rules_301
-    rules  = Rools::RuleSet.new 'test/data/rules301.csv'
+    rules  = Rools::RuleSet.new 'test/fixtures/rules301.csv'
 	status = rules.assert @customer1
 	#puts "$summary = #{$summary}"
 	assert status == :pass
@@ -85,19 +82,19 @@ class CSVLoanTest < Test::Unit::TestCase
   end
   
   def test_customer_2
-    rules  = Rools::RuleSet.new 'test/data/rules101.csv'
+    rules  = Rools::RuleSet.new 'test/fixtures/rules101.csv'
 	status = rules.assert @customer2, @loan2
   	#puts "$incomeValidationResult = #{$incomeValidationResult}"
 	assert status == :pass
 	assert $incomeValidationResult == "SUFFICIENT"
 	
-	rules.load_csv( 'test/data/rules212.csv' )
+	rules.load_csv( 'test/fixtures/rules212.csv' )
 	status = rules.evaluate
 	#puts "$debtResearchResult = #{$debtResearchResult}"
 	assert status == :pass
 	assert $debtResearchResult == "Low"
 
-    rules.load_csv('test/data/rules301.csv')	
+    rules.load_csv('test/fixtures/rules301.csv')	
     status = rules.evaluate
 	#puts "$summary = #{$summary}"
 	assert status == :pass

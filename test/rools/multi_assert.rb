@@ -6,10 +6,7 @@
 # Thu May 10 12:33:00 EDT 2007
 #
 
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
+require 'helper'
 
     
 class MultiAssertTest < Test::Unit::TestCase

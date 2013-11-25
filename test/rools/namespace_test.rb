@@ -1,7 +1,4 @@
-require 'test/unit'
-require 'rools'
-require 'rools/base'
-require 'logger'
+require 'helper'
 
 module Ptest
   class TestClass
