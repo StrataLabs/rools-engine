@@ -5,7 +5,7 @@ require 'rools/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rools"
-  spec.version       = Rools::VERSION
+  spec.version       = Rools::ROOLS_VERSION
   spec.authors = 'Sam Smoot', 'Scott Bauer', 'Pat Cappelaere'
   spec.email = 'ssmoot@gmail.com; bauer.mail@gmail.com cappelaere@gmail.com'
   spec.summary = "A Rules Engine written in Ruby"
